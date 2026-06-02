@@ -1,0 +1,63 @@
+# OS & IDE files
+.DS_Store
+desktop.ini
+*.lnk
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies & Build
+node_modules/
+.next/
+dist/
+build/
+.bun/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Media files (random desktop clutter)
+*.mp4
+*.webm
+*.mov
+*.pdf
+*.exe
+*.zip
+*.crdownload
+*.png
+*.jpg
+*.jpeg
+*.JPG
+*.gif
+*.webp
+*.docx
+
+# Folders to ignore (random desktop organization)
+AI/
+New folder/
+PROCESS/
+ago aqua water plus/
+ai images/
+ai ugc/
+blender addons/
+brainrot videos/
+cig - kashi/
+evo/
+evolutionn/
+family/
+instauploads/
+krishna bday/
+newnew/
+office/
+source img/
+trading/
+watchour/
