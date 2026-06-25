@@ -21,13 +21,13 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response = await call_next(request)
         response.headers["Content-Security-Policy"] = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com/recaptcha/ https://recaptcha.google.com; "
+            "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com/recaptcha/ https://recaptcha.google.com www.gstatic.com; "
             "style-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/; "
             "img-src 'self' data: blob:; "
             "font-src 'self' data: fonts.googleapis.com fonts.gstatic.com; "
             "connect-src 'self' https://wa.me; "
             "form-action 'self'; "
-            "frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com; "
+            "frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com www.gstatic.com; "
             "frame-ancestors 'none'; "
             "base-uri 'self'; "
             "object-src 'none'"

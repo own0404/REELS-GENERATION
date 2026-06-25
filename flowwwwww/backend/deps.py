@@ -41,7 +41,7 @@ async def verify_recaptcha(request: Request):
         return
     token = request.headers.get("X-Recaptcha-Token")
     if not token:
-        raise HTTPException(status_code=400, detail="reCAPTCHA token missing")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="reCAPTCHA token missing")
     async with httpx.AsyncClient() as client:
         resp = await client.post(
             RECAPTCHA_VERIFY_URL,
@@ -49,4 +49,4 @@ async def verify_recaptcha(request: Request):
         )
         result = resp.json()
     if not result.get("success") or result.get("score", 0) < 0.5:
-        raise HTTPException(status_code=400, detail="reCAPTCHA verification failed")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="reCAPTCHA verification failed")

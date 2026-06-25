@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { products } from "@/lib/products";
 import { BRAND } from "@/lib/constants";
 import { Phone, MapPin, Clock, ChatCircle } from "@phosphor-icons/react";
@@ -42,7 +42,7 @@ export default function ContactPage() {
     message: "",
   });
   const [csrfToken, setCsrfToken] = useState("");
-  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const recaptchaRef = useRef<Promise<string> | null>(null);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -58,7 +58,7 @@ export default function ContactPage() {
     script.async = true;
     script.onload = () => {
       (window as any).grecaptcha.ready(() => {
-        (window as any).grecaptcha.execute(siteKey, { action: "submit" }).then(setRecaptchaToken);
+        recaptchaRef.current = (window as any).grecaptcha.execute(siteKey, { action: "submit" });
       });
     };
     document.head.appendChild(script);
@@ -77,11 +77,18 @@ export default function ContactPage() {
     setStatus("loading");
     setErrorMsg("");
 
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "RECAPTCHA_SITE_KEY_PLACEHOLDER";
+    const grecaptcha = (window as any).grecaptcha;
+    let token: string | undefined;
+    if (grecaptcha) {
+      token = await grecaptcha.execute(siteKey, { action: "submit" });
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         credentials: "include",
-        headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken, "X-Recaptcha-Token": recaptchaToken },
+        headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken, "X-Recaptcha-Token": token },
         body: JSON.stringify({
           name: form.name.trim(),
           phone: form.phone.trim(),
