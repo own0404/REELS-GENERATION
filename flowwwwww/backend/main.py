@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 import structlog
 from starlette.middleware.base import BaseHTTPMiddleware
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from slowapi import _rate_limit_exceeded_handler
@@ -73,7 +73,7 @@ async def limit_body_size(request: Request, call_next):
     if content_length is not None:
         try:
             if int(content_length) > 1_048_576:
-                return JSONResponse(status_code=413, content={"detail": "Request entity too large"})
+                return JSONResponse(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, content={"detail": "Request entity too large"})
         except ValueError:
             pass
     response = await call_next(request)
@@ -101,7 +101,7 @@ app.add_middleware(SecurityHeadersMiddleware)
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     logger.error("unhandled.exception", error=type(exc).__name__, detail=str(exc), path=request.url.path)
-    return JSONResponse(status_code=500, content={"detail": "Internal server error"})
+    return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content={"detail": "Internal server error"})
 
 
 app.include_router(contact.router)

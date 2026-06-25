@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { products } from "@/lib/products";
 import { BRAND } from "@/lib/constants";
 import { Phone, MapPin, Clock, ChatCircle } from "@phosphor-icons/react";
@@ -42,7 +42,6 @@ export default function ContactPage() {
     message: "",
   });
   const [csrfToken, setCsrfToken] = useState("");
-  const recaptchaRef = useRef<Promise<string> | null>(null);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -56,11 +55,7 @@ export default function ContactPage() {
     const script = document.createElement("script");
     script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
     script.async = true;
-    script.onload = () => {
-      (window as any).grecaptcha.ready(() => {
-        recaptchaRef.current = (window as any).grecaptcha.execute(siteKey, { action: "submit" });
-      });
-    };
+    script.onload = () => {};
     document.head.appendChild(script);
   }, []);
 
