@@ -73,7 +73,7 @@ export default function ContactPage() {
     setErrorMsg("");
 
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "RECAPTCHA_SITE_KEY_PLACEHOLDER";
-    const grecaptcha = (window as any).grecaptcha;
+    const grecaptcha = (window as { grecaptcha?: { execute: (key: string, opts: { action: string }) => Promise<string> } }).grecaptcha;
     let token: string | undefined;
     if (grecaptcha) {
       token = await grecaptcha.execute(siteKey, { action: "submit" });
