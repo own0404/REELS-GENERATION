@@ -10,8 +10,8 @@ from slowapi.errors import RateLimitExceeded
 from config import settings
 from logging_config import configure_logging
 from database import engine, Base
-from deps import limiter
-from routers import contact, newsletter, products, inquiry, auth, admin
+from deps import limiter, validate_csrf
+from routers import contact, newsletter, products, inquiry, auth, admin, csrf
 
 logger = structlog.get_logger()
 
@@ -81,6 +81,13 @@ async def limit_body_size(request: Request, call_next):
 
 
 @app.middleware("http")
+async def csrf_middleware(request: Request, call_next):
+    validate_csrf(request)
+    response = await call_next(request)
+    return response
+
+
+@app.middleware("http")
 async def log_requests(request: Request, call_next):
     logger.info("request.started", method=request.method, path=request.url.path)
     response = await call_next(request)
@@ -101,6 +108,7 @@ app.include_router(contact.router)
 app.include_router(newsletter.router)
 app.include_router(products.router)
 app.include_router(inquiry.router)
+app.include_router(csrf.router)
 app.include_router(auth.router)
 app.include_router(admin.router)
 
