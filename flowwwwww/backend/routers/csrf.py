@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Response
+from fastapi import APIRouter, Request, Response
 from itsdangerous import URLSafeTimedSerializer
 from config import settings
 
@@ -11,13 +11,13 @@ _serializer = URLSafeTimedSerializer(
 
 
 @router.get("/csrf-token")
-def get_csrf_token(response: Response):
+def get_csrf_token(request: Request, response: Response):
     token = _serializer.dumps("csrf")
     response.set_cookie(
         key="csrf_token",
         value=token,
         httponly=True,
-        secure=True,
+        secure=request.url.scheme == "https",
         samesite="strict",
         max_age=3600,
     )
