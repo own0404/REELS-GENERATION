@@ -1,3 +1,4 @@
+import httpx
 from fastapi import Request, HTTPException, status
 from itsdangerous import URLSafeTimedSerializer, BadSignature, SignatureExpired
 from slowapi import Limiter
@@ -30,3 +31,22 @@ def validate_csrf(request: Request):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="CSRF token expired")
     except BadSignature:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="CSRF token invalid")
+
+
+RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify"
+
+
+async def verify_recaptcha(request: Request):
+    if not settings.recaptcha_secret_key:
+        return
+    token = request.headers.get("X-Recaptcha-Token")
+    if not token:
+        raise HTTPException(status_code=400, detail="reCAPTCHA token missing")
+    async with httpx.AsyncClient() as client:
+        resp = await client.post(
+            RECAPTCHA_VERIFY_URL,
+            data={"secret": settings.recaptcha_secret_key, "response": token},
+        )
+        result = resp.json()
+    if not result.get("success") or result.get("score", 0) < 0.5:
+        raise HTTPException(status_code=400, detail="reCAPTCHA verification failed")

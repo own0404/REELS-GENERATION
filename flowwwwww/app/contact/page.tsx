@@ -42,6 +42,7 @@ export default function ContactPage() {
     message: "",
   });
   const [csrfToken, setCsrfToken] = useState("");
+  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -50,6 +51,17 @@ export default function ContactPage() {
       .then((r) => r.json())
       .then((d) => setCsrfToken(d.csrf_token))
       .catch(() => {});
+
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "RECAPTCHA_SITE_KEY_PLACEHOLDER";
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+    script.async = true;
+    script.onload = () => {
+      (window as any).grecaptcha.ready(() => {
+        (window as any).grecaptcha.execute(siteKey, { action: "submit" }).then(setRecaptchaToken);
+      });
+    };
+    document.head.appendChild(script);
   }, []);
 
   const update = (field: keyof FormState, value: string) => {
@@ -69,7 +81,7 @@ export default function ContactPage() {
       const res = await fetch("/api/contact", {
         method: "POST",
         credentials: "include",
-        headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken },
+        headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken, "X-Recaptcha-Token": recaptchaToken },
         body: JSON.stringify({
           name: form.name.trim(),
           phone: form.phone.trim(),
