@@ -66,8 +66,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.add_middleware(SecurityHeadersMiddleware)
-
 
 @app.middleware("http")
 async def limit_body_size(request: Request, call_next):
@@ -88,6 +86,9 @@ async def log_requests(request: Request, call_next):
     response = await call_next(request)
     logger.info("request.completed", method=request.method, path=request.url.path, status=response.status_code)
     return response
+
+
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 @app.exception_handler(Exception)
