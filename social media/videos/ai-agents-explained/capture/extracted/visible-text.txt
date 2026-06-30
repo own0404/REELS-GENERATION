@@ -1,0 +1,29 @@
+AI Agents — A Simple Introduction
+
+What are AI agents? AI agents are autonomous programs that can perceive their environment, make decisions, and take actions to achieve specific goals. Think of them as smart assistants that don't just answer questions — they actually DO things.
+
+How do they work? An AI agent typically follows a loop: perceive → think → act. It senses its environment (like reading data or detecting changes), processes that information using AI models, then takes action (like sending an email, updating a database, or controlling a device).
+
+Key capabilities of AI agents:
+- Autonomy: They work without constant human oversight
+- Goal-oriented: They pursue specific objectives
+- Adaptive: They learn and adjust based on feedback
+- Interactive: They communicate with users and other systems
+
+Real-world examples:
+- Customer support bots that handle tickets end-to-end
+- Code assistants that write, test, and debug software
+- Trading agents that analyze markets and execute trades
+- Smart home controllers that manage temperature, lighting, and security
+
+Why now? Recent advances in large language models (LLMs) have supercharged AI agents. Models like GPT-4, Claude, and others give agents the ability to understand context, reason through problems, and generate human-like responses. Combined with tools and APIs, agents can now access real-time data, browse the web, run code, and control other software.
+
+Common frameworks:
+- LangChain: Build agent workflows with LLMs
+- AutoGPT: Autonomous goal-driven agents
+- CrewAI: Multi-agent collaboration
+- OpenAI Assistants API: Hosted agent platform
+
+The future: AI agents are evolving from simple single-purpose tools into sophisticated multi-agent systems that collaborate on complex tasks. They'll manage workflows, conduct research, write code, and even negotiate with other agents — all while learning from experience.
+
+The key takeaway: AI agents are your digital workforce. They don't just process information — they act on it.

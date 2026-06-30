@@ -1,0 +1,37 @@
+<template data-composition-id="04-capabilities">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+  #root { position:relative; width:1920px; height:1080px; overflow:hidden; background:#fdfae7; font-family:Inter,sans-serif; }
+  .card { position:absolute; width:500px; padding:40px; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; }
+</style>
+<div id="root" data-composition-id="04-capabilities" data-start="0" data-duration="10.704" data-width="1920" data-height="1080">
+  <div class="clip" data-start="0" data-duration="10.704" data-track-index="1" style="position:absolute;inset:0;background:#fdfae7"></div>
+  <div class="clip" data-start="0" data-duration="10.704" data-track-index="2" style="position:absolute;left:100px;top:80px;font-family:Space Grotesk;font-weight:600;font-size:18px;letter-spacing:0.08em;text-transform:uppercase;color:#1e2bfa;opacity:0" id="eyebrow">Key Traits</div>
+  <div class="clip" data-start="0" data-duration="10.704" data-track-index="3" style="position:absolute;right:100px;top:80px;padding:8px 24px;background:rgba(30,43,250,0.08);border-radius:100px;font-family:Space Grotesk;font-weight:500;font-size:14px;color:#1e2bfa;opacity:0" id="tag">3 capabilities</div>
+  <div class="clip card" data-start="0" data-duration="10.704" data-track-index="4" style="left:100px;top:260px;opacity:0" id="card1">
+    <div style="font-family:Space Grotesk;font-weight:700;font-size:36px;color:#1e2bfa">01</div>
+    <div style="font-family:Space Grotesk;font-weight:600;font-size:28px;color:#111;margin-top:8px">Autonomy</div>
+    <div style="font-family:Inter;font-weight:400;font-size:18px;color:#6b6b6b;margin-top:8px">Work without constant supervision</div>
+  </div>
+  <div class="clip card" data-start="0" data-duration="10.704" data-track-index="5" style="left:710px;top:260px;opacity:0" id="card2">
+    <div style="font-family:Space Grotesk;font-weight:700;font-size:36px;color:#1e2bfa">02</div>
+    <div style="font-family:Space Grotesk;font-weight:600;font-size:28px;color:#111;margin-top:8px">Goal-Driven</div>
+    <div style="font-family:Inter;font-weight:400;font-size:18px;color:#6b6b6b;margin-top:8px">Pursue specific objectives</div>
+  </div>
+  <div class="clip card" data-start="0" data-duration="10.704" data-track-index="6" style="left:1320px;top:260px;opacity:0" id="card3">
+    <div style="font-family:Space Grotesk;font-weight:700;font-size:36px;color:#1e2bfa">03</div>
+    <div style="font-family:Space Grotesk;font-weight:600;font-size:28px;color:#111;margin-top:8px">Adaptive</div>
+    <div style="font-family:Inter;font-weight:400;font-size:18px;color:#6b6b6b;margin-top:8px">Learn from experience</div>
+  </div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({paused:true});
+  tl.fromTo("#eyebrow",{opacity:0,y:-10},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0);
+  tl.fromTo("#tag",{opacity:0,y:-10},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0.2);
+  tl.fromTo("#card1",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"power3.out"},2.5);
+  tl.fromTo("#card2",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"power3.out"},5.5);
+  tl.fromTo("#card3",{opacity:0,y:30},{opacity:1,y:0,duration:0.6,ease:"power3.out"},8.0);
+  window.__timelines["04-capabilities"] = tl;
+</script>
+</template>

@@ -1,0 +1,23 @@
+<template data-composition-id="01-hook">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+  #root { position:relative; width:1920px; height:1080px; overflow:hidden; background:#fdfae7; font-family:Inter,sans-serif; }
+</style>
+<div id="root" data-composition-id="01-hook" data-start="0" data-duration="4.416" data-width="1920" data-height="1080">
+  <div class="clip" data-start="0" data-duration="4.416" data-track-index="1" style="position:absolute;inset:0;background:#fdfae7"></div>
+  <div class="clip" data-start="0" data-duration="2.2" data-track-index="2" style="position:absolute;left:150px;top:320px;font-family:Inter;font-weight:400;font-size:32px;color:#6b6b6b;opacity:0" id="s1-text">What if your software</div>
+  <div class="clip" data-start="2.2" data-duration="2.216" data-track-index="3" style="position:absolute;left:150px;top:400px;opacity:0" id="s2-group">
+    <div style="font-family:Space Grotesk;font-weight:700;font-size:80px;color:#1e2bfa">could DO things —</div>
+    <div style="font-family:Inter;font-weight:400;font-size:32px;color:#6b6b6b;margin-top:16px">not just answer, but act?</div>
+  </div>
+  <div class="clip" data-start="2.2" data-duration="2.216" data-track-index="4" style="position:absolute;left:150px;top:510px;width:60px;height:4px;background:#1e2bfa;border-radius:2px;transform-origin:left center;scaleX:0" id="accent-line"></div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({paused:true});
+  tl.fromTo("#s1-text",{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:"power3.out"},0);
+  tl.fromTo("#s2-group",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},0);
+  tl.fromTo("#accent-line",{scaleX:0},{scaleX:1,duration:0.8,ease:"power3.out"},0.3);
+  window.__timelines["01-hook"] = tl;
+</script>
+</template>

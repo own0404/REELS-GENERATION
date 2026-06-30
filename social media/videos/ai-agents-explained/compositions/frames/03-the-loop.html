@@ -1,0 +1,41 @@
+<template data-composition-id="03-the-loop">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+  #root { position:relative; width:1920px; height:1080px; overflow:hidden; background:#fdfae7; font-family:Inter,sans-serif; }
+  .node { position:absolute; width:260px; padding:30px 20px; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; text-align:center; }
+</style>
+<div id="root" data-composition-id="03-the-loop" data-start="0" data-duration="7.32" data-width="1920" data-height="1080">
+  <div class="clip" data-start="0" data-duration="7.32" data-track-index="1" style="position:absolute;inset:0;background:#fdfae7"></div>
+  <div class="clip" data-start="0" data-duration="7.32" data-track-index="2" style="position:absolute;left:560px;top:240px;width:800px;height:600px;border-radius:50%;border:2px solid rgba(30,43,250,0.1);opacity:0" id="bg-ring"></div>
+  <div class="clip node" data-start="0" data-duration="7.32" data-track-index="3" style="left:590px;top:260px;opacity:0" id="node-perceive">
+    <div style="font-size:40px;color:#1e2bfa;margin-bottom:8px">&#9756;</div>
+    <div style="font-family:Space Grotesk;font-weight:600;font-size:28px;color:#111">Perceive</div>
+    <div style="font-family:Inter;font-weight:400;font-size:18px;color:#6b6b6b;margin-top:4px">Sense the environment</div>
+  </div>
+  <div class="clip node" data-start="0" data-duration="7.32" data-track-index="4" style="left:1060px;top:260px;opacity:0" id="node-think">
+    <div style="font-size:40px;color:#1e2bfa;margin-bottom:8px">&#9881;</div>
+    <div style="font-family:Space Grotesk;font-weight:600;font-size:28px;color:#111">Think</div>
+    <div style="font-family:Inter;font-weight:400;font-size:18px;color:#6b6b6b;margin-top:4px">Process &amp; reason</div>
+  </div>
+  <div class="clip node" data-start="0" data-duration="7.32" data-track-index="5" style="left:830px;top:580px;opacity:0" id="node-act">
+    <div style="font-size:40px;color:#1e2bfa;margin-bottom:8px">&#9654;</div>
+    <div style="font-family:Space Grotesk;font-weight:600;font-size:28px;color:#111">Act</div>
+    <div style="font-family:Inter;font-weight:400;font-size:18px;color:#6b6b6b;margin-top:4px">Execute &amp; effect</div>
+  </div>
+  <div class="clip" data-start="0" data-duration="7.32" data-track-index="6" style="position:absolute;left:850px;top:380px;width:210px;height:2px;background:rgba(30,43,250,0.3);transform-origin:left center;rotate:-45deg;scaleX:0" id="arrow1"></div>
+  <div class="clip" data-start="0" data-duration="7.32" data-track-index="7" style="position:absolute;left:1200px;top:370px;width:200px;height:2px;background:rgba(30,43,250,0.3);transform-origin:left center;rotate:45deg;scaleX:0" id="arrow2"></div>
+  <div class="clip" data-start="0" data-duration="7.32" data-track-index="8" style="position:absolute;left:880px;top:600px;width:200px;height:2px;background:rgba(30,43,250,0.3);transform-origin:left center;scaleX:0" id="arrow3"></div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({paused:true});
+  tl.fromTo("#bg-ring",{opacity:0,scale:0.8},{opacity:1,scale:1,duration:0.8,ease:"power3.out"},0);
+  tl.fromTo("#node-perceive",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},1.5);
+  tl.fromTo("#arrow1",{scaleX:0},{scaleX:1,duration:0.5,ease:"power3.out"},2.0);
+  tl.fromTo("#node-think",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},3.5);
+  tl.fromTo("#arrow2",{scaleX:0},{scaleX:1,duration:0.5,ease:"power3.out"},4.0);
+  tl.fromTo("#node-act",{opacity:0,y:20},{opacity:1,y:0,duration:0.5,ease:"power3.out"},5.5);
+  tl.fromTo("#arrow3",{scaleX:0},{scaleX:1,duration:0.5,ease:"power3.out"},6.0);
+  window.__timelines["03-the-loop"] = tl;
+</script>
+</template>

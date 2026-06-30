@@ -1,0 +1,51 @@
+[
+  {
+    "id": "01",
+    "frame": 1,
+    "text": "What if your software could do things \u2014 not just answer, but act?",
+    "path": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\social media\\videos\\ai-agents-explained\\public\\audio\\frame_01.mp3",
+    "duration_s": 4.416
+  },
+  {
+    "id": "02",
+    "frame": 2,
+    "text": "AI agents are autonomous programs that sense their world, make decisions, and take action.",
+    "path": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\social media\\videos\\ai-agents-explained\\public\\audio\\frame_02.mp3",
+    "duration_s": 5.688
+  },
+  {
+    "id": "03",
+    "frame": 3,
+    "text": "They follow a simple loop: perceive the situation, think through options, then act. Then they repeat.",
+    "path": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\social media\\videos\\ai-agents-explained\\public\\audio\\frame_03.mp3",
+    "duration_s": 7.32
+  },
+  {
+    "id": "04",
+    "frame": 4,
+    "text": "Key traits: autonomy \u2014 they work without constant supervision. Goal-driven \u2014 they pursue specific objectives. Adaptive \u2014 they learn from experience.",
+    "path": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\social media\\videos\\ai-agents-explained\\public\\audio\\frame_04.mp3",
+    "duration_s": 10.704
+  },
+  {
+    "id": "05",
+    "frame": 5,
+    "text": "Customer support bots that resolve tickets. Coding assistants that write and test software. Smart home controllers that manage your environment.",
+    "path": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\social media\\videos\\ai-agents-explained\\public\\audio\\frame_05.mp3",
+    "duration_s": 10.296
+  },
+  {
+    "id": "06",
+    "frame": 6,
+    "text": "Large language models supercharged agents. Now they understand context, reason through problems, and use tools.",
+    "path": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\social media\\videos\\ai-agents-explained\\public\\audio\\frame_06.mp3",
+    "duration_s": 8.232
+  },
+  {
+    "id": "07",
+    "frame": 7,
+    "text": "AI agents are your digital workforce. They don't just process information \u2014 they act on it.",
+    "path": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\social media\\videos\\ai-agents-explained\\public\\audio\\frame_07.mp3",
+    "duration_s": 6.792
+  }
+]

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fdfae7;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="53.448"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-hook"
+        class="scene"
+        data-composition-id="01-hook"
+        data-composition-src="compositions/frames/01-hook.html"
+        data-start="0"
+        data-duration="4.416"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-02-what-is-ai-agent"
+        class="scene"
+        data-composition-id="02-what-is-ai-agent"
+        data-composition-src="compositions/frames/02-what-is-ai-agent.html"
+        data-start="4.416"
+        data-duration="5.688"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-03-the-loop"
+        class="scene"
+        data-composition-id="03-the-loop"
+        data-composition-src="compositions/frames/03-the-loop.html"
+        data-start="10.104"
+        data-duration="7.32"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-04-capabilities"
+        class="scene"
+        data-composition-id="04-capabilities"
+        data-composition-src="compositions/frames/04-capabilities.html"
+        data-start="17.424"
+        data-duration="10.704"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-05-examples"
+        class="scene"
+        data-composition-id="05-examples"
+        data-composition-src="compositions/frames/05-examples.html"
+        data-start="28.128"
+        data-duration="10.296"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-06-why-now"
+        class="scene"
+        data-composition-id="06-why-now"
+        data-composition-src="compositions/frames/06-why-now.html"
+        data-start="38.424"
+        data-duration="8.232"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="el-07-takeaway"
+        class="scene"
+        data-composition-id="07-takeaway"
+        data-composition-src="compositions/frames/07-takeaway.html"
+        data-start="46.656"
+        data-duration="6.792"
+        data-track-index="1"
+      ></div>
+
+      <audio id="voice-01" class="clip" src="public/audio/frame_01.mp3" data-start="0" data-duration="4.416" data-track-index="10"></audio>
+      <audio id="voice-02" class="clip" src="public/audio/frame_02.mp3" data-start="4.416" data-duration="5.688" data-track-index="10"></audio>
+      <audio id="voice-03" class="clip" src="public/audio/frame_03.mp3" data-start="10.104" data-duration="7.32" data-track-index="10"></audio>
+      <audio id="voice-04" class="clip" src="public/audio/frame_04.mp3" data-start="17.424" data-duration="10.704" data-track-index="10"></audio>
+      <audio id="voice-05" class="clip" src="public/audio/frame_05.mp3" data-start="28.128" data-duration="10.296" data-track-index="10"></audio>
+      <audio id="voice-06" class="clip" src="public/audio/frame_06.mp3" data-start="38.424" data-duration="8.232" data-track-index="10"></audio>
+      <audio id="voice-07" class="clip" src="public/audio/frame_07.mp3" data-start="46.656" data-duration="6.792" data-track-index="10"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

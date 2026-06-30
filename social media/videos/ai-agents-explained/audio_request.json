@@ -1,0 +1,40 @@
+{
+  "provider": "auto",
+  "speed": 1,
+  "lines": [
+    {
+      "id": "01",
+      "text": "What if your software could do things — not just answer, but act?"
+    },
+    {
+      "id": "02",
+      "text": "AI agents are autonomous programs that sense their world, make decisions, and take action."
+    },
+    {
+      "id": "03",
+      "text": "They follow a simple loop: perceive the situation, think through options, then act. Then they repeat."
+    },
+    {
+      "id": "04",
+      "text": "Key traits: autonomy — they work without constant supervision. Goal-driven — they pursue specific objectives. Adaptive — they learn from experience."
+    },
+    {
+      "id": "05",
+      "text": "Customer support bots that resolve tickets. Coding assistants that write and test software. Smart home controllers that manage your environment."
+    },
+    {
+      "id": "06",
+      "text": "Large language models supercharged agents. Now they understand context, reason through problems, and use tools."
+    },
+    {
+      "id": "07",
+      "text": "AI agents are your digital workforce. They don't just process information — they act on it."
+    }
+  ],
+  "bgm": {
+    "mode": "retrieve",
+    "query": "AI agents are autonomous programs that sense, decide, and act — your digital workforce.",
+    "blob": "AI agents are autonomous programs that sense, decide, and act — your digital workforce.",
+    "arc": "concept-explainer"
+  }
+}

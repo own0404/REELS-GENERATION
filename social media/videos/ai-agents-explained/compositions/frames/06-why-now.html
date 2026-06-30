@@ -1,0 +1,41 @@
+<template data-composition-id="06-why-now">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+  #root { position:relative; width:1920px; height:1080px; overflow:hidden; background:#fdfae7; font-family:Inter,sans-serif; }
+  .sat { position:absolute; width:220px; padding:20px; background:rgba(30,43,250,0.04); border:1.5px solid rgba(30,43,250,0.2); border-radius:14px; text-align:center; }
+</style>
+<div id="root" data-composition-id="06-why-now" data-start="0" data-duration="8.232" data-width="1920" data-height="1080">
+  <div class="clip" data-start="0" data-duration="8.232" data-track-index="1" style="position:absolute;inset:0;background:#fdfae7"></div>
+  <div class="clip" data-start="0" data-duration="8.232" data-track-index="2" style="position:absolute;left:786px;top:390px;width:350px;height:350px;border-radius:50%;background:rgba(30,43,250,0.08);border:2px solid rgba(30,43,250,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0" id="hub">
+    <div style="font-size:60px;color:#1e2bfa">&#9881;</div>
+    <div style="font-family:Space Grotesk;font-weight:700;font-size:28px;color:#111;margin-top:8px">LLM</div>
+  </div>
+  <div class="clip sat" data-start="0" data-duration="8.232" data-track-index="3" style="left:260px;top:180px;opacity:0" id="sat1">
+    <div style="font-size:36px;color:#1e2bfa">&#128279;</div>
+    <div style="font-family:Inter;font-weight:500;font-size:16px;color:#6b6b6b;margin-top:4px">Understand context</div>
+  </div>
+  <div class="clip" data-start="0" data-duration="8.232" data-track-index="4" style="position:absolute;left:480px;top:350px;width:306px;height:2px;background:rgba(30,43,250,0.2);transform-origin:left center;rotate:15deg;scaleX:0" id="conn1"></div>
+  <div class="clip sat" data-start="0" data-duration="8.232" data-track-index="5" style="left:260px;top:500px;opacity:0" id="sat2">
+    <div style="font-size:36px;color:#1e2bfa">&#129504;</div>
+    <div style="font-family:Inter;font-weight:500;font-size:16px;color:#6b6b6b;margin-top:4px">Reason through problems</div>
+  </div>
+  <div class="clip" data-start="0" data-duration="8.232" data-track-index="6" style="position:absolute;left:480px;top:570px;width:306px;height:2px;background:rgba(30,43,250,0.2);transform-origin:left center;rotate:-15deg;scaleX:0" id="conn2"></div>
+  <div class="clip sat" data-start="0" data-duration="8.232" data-track-index="7" style="left:400px;top:760px;opacity:0" id="sat3">
+    <div style="font-size:36px;color:#1e2bfa">&#128736;</div>
+    <div style="font-family:Inter;font-weight:500;font-size:16px;color:#6b6b6b;margin-top:4px">Use tools</div>
+  </div>
+  <div class="clip" data-start="0" data-duration="8.232" data-track-index="8" style="position:absolute;left:680px;top:790px;width:106px;height:2px;background:rgba(30,43,250,0.2);transform-origin:left center;scaleX:0" id="conn3"></div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({paused:true});
+  tl.fromTo("#hub",{opacity:0,scale:0.8},{opacity:1,scale:1,duration:0.6,ease:"power3.out"},0);
+  tl.fromTo("#sat1",{opacity:0,x:-40},{opacity:1,x:0,duration:0.6,ease:"power3.out"},1.5);
+  tl.fromTo("#conn1",{scaleX:0},{scaleX:1,duration:0.4,ease:"power3.out"},1.8);
+  tl.fromTo("#sat2",{opacity:0,x:-40},{opacity:1,x:0,duration:0.6,ease:"power3.out"},4.0);
+  tl.fromTo("#conn2",{scaleX:0},{scaleX:1,duration:0.4,ease:"power3.out"},4.3);
+  tl.fromTo("#sat3",{opacity:0,x:-40},{opacity:1,x:0,duration:0.6,ease:"power3.out"},6.0);
+  tl.fromTo("#conn3",{scaleX:0},{scaleX:1,duration:0.4,ease:"power3.out"},6.3);
+  window.__timelines["06-why-now"] = tl;
+</script>
+</template>
